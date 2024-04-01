@@ -1,5 +1,5 @@
 module MAR
-#(parameter WIDTH = 8)
+#(parameter WIDTH = 4)
 (
 	input 	clk, clr, prog_en, reg_en,
 	input	[WIDTH - 1:0] sw, bus,
@@ -14,7 +14,7 @@ assign prg = prog_en;
 
 always @ (posedge clk)
 begin
-	if (clr) 	mem_addr <= 8'b0;
+	if (clr) 		mem_addr <= 8'b0;
 	else if (reg_en)	mem_addr <= bus;
 end
 
