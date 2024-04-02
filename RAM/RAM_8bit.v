@@ -12,4 +12,5 @@ assign bus = (rd_en) ? mem_reg[addr] : 8'bz;		// Tri-state buffer to set high-im
 
 always @ (posedge clk)
 	if (wr_en) mem_reg[addr] <= bus;	        // If wr_en is high, store bus values in mem_reg at the selected address
+	
 endmodule
