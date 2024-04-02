@@ -1,4 +1,4 @@
-module bcd_conv				// BCD converter using double dabble algorithm
+module bcd_conv									// BCD converter using double dabble algorithm
 #( parameter		W = 8)
 (
 	input 		clk, en,
@@ -6,17 +6,18 @@ module bcd_conv				// BCD converter using double dabble algorithm
 	output reg 	[11:0] bcd
 );
 
-integer i, j;
+integer i;
 
 always @ (posedge clk)
 if (en)
 	begin
-		for (i = 0; i <= W+(W-4)/3; i = i + 1) bcd[i] <= 0;
-		bcd[W-1:0] <= bus_in;
-		for (i = 0; i <= W - 4; i = i + 1)
-			for (j = 0; j <= i/3; j = j + 1)
-				if (bcd[W-i+4*j -: 4] > 4)
-					bcd[W-i+4*j -: 4] <= bcd[W-i+4*j -: 4] + 4'd3;
+		bcd[W-1:0] <= bus_in;		 	
+		for (i=0; i<W; i=i+1)						// Iterate through each input bit
+		begin								// If any BCD digit is >= 5, add three
+			if (bcd[3:0] >= 5)	bcd[3:0]  <= bcd[3:0]  + 4'd3;	
+			if (bcd[7:4] >= 5)	bcd[7:4]  <= bcd[7:4]  + 4'd3;
+			if (bcd[11:8] >= 5)	bcd[11:8] <= bcd[11:8] + 4'd3;
+		end
 	end
 	
 endmodule
