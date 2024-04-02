@@ -6,15 +6,15 @@ module seg_7
 );
 
 localparam	ZERO	= 7'b1111110,
-		        ONE	= 7'b0110000,
-		        TWO	= 7'b1101101,
-		        THREE	= 7'b1111001,
-		        FOUR	= 7'b0110011,
-		        FIVE	= 7'b1011011,
-		        SIX	= 7'b1011111,
-		        SEVEN	= 7'b1110000,
-		        EIGHT	= 7'b1111111,
-		        NINE	= 7'b1111011;
+		ONE	= 7'b0110000,
+		TWO	= 7'b1101101,
+		THREE	= 7'b1111001,
+		FOUR	= 7'b0110011,
+		FIVE	= 7'b1011011,
+		SIX	= 7'b1011111,
+		SEVEN	= 7'b1110000,
+		EIGHT	= 7'b1111111,
+		NINE	= 7'b1111011;
 
 always @ (posedge clk)
 begin
