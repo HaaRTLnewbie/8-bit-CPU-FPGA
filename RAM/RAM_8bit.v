@@ -6,7 +6,7 @@ module RAM_8bit
 	inout		[WIDTH - 1:0] bus		// 8-bit bidirectional wire to bus
 );
 
-reg [WIDTH - 1:0] mem_reg [0:15];		        // Instantiating 8-bit wide memory with 16 addresses
+reg [WIDTH - 1:0] mem_reg [0:15];		        // Defining 8-bit wide memory with 16 addresses
 
 assign bus = (rd_en) ? mem_reg[addr] : 8'bz;		// Tri-state buffer to disconnect bus if read enable is low
 
