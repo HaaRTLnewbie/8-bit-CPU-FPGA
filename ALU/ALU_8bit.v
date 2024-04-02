@@ -23,4 +23,5 @@ case(sel)						// Instruction select
 	MLT	: 	ALU_reg <= reg_A * reg_B;
 	DIV	:	ALU_reg <= reg_A / reg_B;
 endcase							// Default not required as all states are considered (with current instruction set)
+	
 endmodule
