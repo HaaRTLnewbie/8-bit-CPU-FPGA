@@ -3,7 +3,7 @@ module RAM_8bit
 (
 	input		wr_en, rd_en, clk,
 	input		[(WIDTH / 2):0] addr,		// 4-bit address from MAR
-	inout		[WIDTH - 1:0] bus		// 8-bit bidirectional wire to bus
+	inout		[WIDTH - 1:0] bus		// 8-bit bidirectional bus
 );
 
 reg [WIDTH - 1:0] mem_reg [0:15];		        // Defining 8-bit wide memory with 16 addresses
