@@ -11,7 +11,7 @@ integer i;
 always @ (posedge clk)
 if (en)
 	begin
-		bcd[W-1:0] <= bus_in;		 	
+		bcd[W-1:0] <= bus_in;		 				// Writes bus values to bcd from RHS
 		for (i=0; i<W; i=i+1)						// Iterate through each input bit
 		begin								// If any BCD digit is >= 5, add three
 			if (bcd[3:0] >= 5)	bcd[3:0]  <= bcd[3:0]  + 4'd3;	
