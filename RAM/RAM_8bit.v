@@ -1,4 +1,4 @@
-module ram_8bit
+module RAM_8bit
 #(parameter WIDTH = 8)
 (
 	input		wr_en, rd_en, clk,
