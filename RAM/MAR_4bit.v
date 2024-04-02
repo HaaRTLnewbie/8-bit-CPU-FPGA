@@ -10,7 +10,7 @@ module MAR_4bit
 reg [WIDTH - 1:0] mem_addr;
 
 assign addr = (prog_en) ? sw : mem_addr;
-assign prog = prog_en;					// Drives prog_en to prog net to go to RAM module
+assign prog = prog_en;					// Drives prog_en to the prog net to go to RAM module
 	
 	always @ (posedge clk or posedge clr)		// Procedural block triggering on rising edge of clk or clr for asynchronous reset
 begin
