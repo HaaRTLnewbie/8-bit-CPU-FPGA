@@ -1,4 +1,4 @@
-module MAR
+module MAR_4bit
 #(parameter WIDTH = 4)
 (
 	input 	clk, clr, prog_en, reg_en,
