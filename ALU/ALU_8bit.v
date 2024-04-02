@@ -1,9 +1,9 @@
 module ALU_8bit
 #(parameter WIDTH = 8)
 (
-input		clk,									  
-input		[1:0] sel,				// Select signal to choose operation to execute
-input		[WIDTH - 1:0] reg_A, reg_B,		// 8-bit inputs directly from register A and B
+input		clk,			  
+input		[1:0] sel,				// Select input to choose ALU instruction
+input		[WIDTH - 1:0] reg_A, reg_B,		// 8-bit inputs from register A and B
 inout		[WIDTH - 1:0] bus			// 8-bit bidirectional bus
 );
 
@@ -12,7 +12,7 @@ localparam	ADD	=	2'b00,			// Parameterising opcodes
 		MLT	=	2'b10,
 		DIV	=	2'b11;
 
-reg [WIDTH - 1:0] ALU_reg;				// Defining an 8-bit wide register
+reg [WIDTH - 1:0] ALU_reg;
 
 assign bus = en ? ALU_reg : 8'bz;			// Tri-state buffer to set high-impedance to bus if en is low
 
