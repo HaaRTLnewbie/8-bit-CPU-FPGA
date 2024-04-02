@@ -12,10 +12,10 @@ reg [WIDTH - 1:0] mem_addr;
 	assign addr = (prog_en) ? sw : mem_addr;	// addr output depends on prog_en
 assign prog = prog_en;					// prog_en propagates to RAM module through prog pin
 	
-	always @ (posedge clk or posedge clr)		// Always block triggering on rising clock edge or clr for asynchronous reset
+	always @ (posedge clk or posedge clr)		// Procedural block triggering on rising edge of clk or clr for asynchronous reset
 begin
 	if (clr) 		mem_addr <= 8'b0;
-	else if (reg_en)	mem_addr <= bus;	// Writes bus value to mem_addr if reg_en is high
+	else if (reg_en)	mem_addr <= bus;
 end
 
 endmodule
