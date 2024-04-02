@@ -14,7 +14,8 @@ assign reg_out = mem_reg;					// Drives mem_reg values to the reg_out net
 
 always @ (posedge clk or posedge clr)				// Procedural block triggers on rising edge of clk or clr for asynchronous reset
 begin
-  if (clr) mem_reg <= 8'b0;
+	if (clr) mem_reg <= 8'b0;
 	else if (wr_en) mem_reg <= bus_in;
 end
+	
 endmodule
