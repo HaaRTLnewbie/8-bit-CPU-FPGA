@@ -1,4 +1,4 @@
-module reg_v1
+module reg_8bit
 #(parameter WIDTH = 8)
 (
 	input		wr_en, rd_en, clk, clr,			          // wr_en, rd_en, and clr are enable high
