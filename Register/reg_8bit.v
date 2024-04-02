@@ -7,7 +7,7 @@ module reg_8bit
 //	inout		[WIDTH - 1:0] bus			// 8-bit bidirectional bus (currently debugging)
 );
 
-reg [WIDTH - 1:0] mem_reg;	 				// Defining an 8-bit wide register
+reg [WIDTH - 1:0] mem_reg;
 
 assign bus_out = (rd_en) ? mem_reg : 8'bz;			// Tri-state buffer to set high-impedance to bus_out if rd_en is low
 assign reg_out = mem_reg;					// Drives mem_reg values to the reg_out net
