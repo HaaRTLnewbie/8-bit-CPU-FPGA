@@ -19,10 +19,10 @@ assign bus = en ? ALU_reg : 8'bz;				  //Only outputs register to the bus when e
 always @ (posedge clk)
 	begin
     case(sel)												      //Case to select instruction
-			ADD		:	mem_ALU = reg_A + reg_B;
-			SUB		:	mem_ALU = reg_A - reg_B;
-			MLT		: 	mem_ALU = reg_A * reg_B;
-			DIV		:	mem_ALU = reg_A / reg_B;
+			ADD		:	ALU_reg = reg_A + reg_B;
+			SUB		:	ALU_reg = reg_A - reg_B;
+			MLT		: 	ALU_reg = reg_A * reg_B;
+			DIV		:	ALU_reg = reg_A / reg_B;
 		endcase													      //Default not required as all states are considered
 	end
 endmodule
