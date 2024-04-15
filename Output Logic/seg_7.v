@@ -1,8 +1,10 @@
 module seg_7
 (
 	input 		clk,
-	input		[11:0] bcd,
-	output reg 	[6:0] d0, d1, d2  	// Output registers to drive 3, 7-segment displays
+	input		[11:0]	bcd,
+	output reg 	[6:0]	d0,	  	// Output registers to drive 3, 7-segment displays
+				d1,
+				d2
 );
 
 localparam	ZERO	= 7'b1111110,
