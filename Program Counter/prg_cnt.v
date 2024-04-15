@@ -1,12 +1,12 @@
 module prg_cnt
 #(parameter WIDTH = 4)
 (
-	input		clk,
-				  clr,
-				  cnt_en,
-				  out_en,
+	input	clk,
+		clr,
+		cnt_en,
+		out_en,
 
-	inout		[WIDTH - 1:0] bus
+	inout	[WIDTH - 1:0] bus
 );
 
 reg [WIDTH - 1:0] count;
