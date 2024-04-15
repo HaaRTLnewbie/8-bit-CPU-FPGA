@@ -4,9 +4,9 @@ module bcd_conv									// BCD converter using double dabble algorithm
 	input 	clk,
 		en,
 	
-	input	[W - 1:0]	bus_in,
+	input	[W - 1:0] bus_in,
 	
-	output 	reg [11:0]	bcd
+	output 	reg [11:0] bcd
 );
 
 integer i;
