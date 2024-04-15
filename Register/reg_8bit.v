@@ -1,12 +1,12 @@
 module reg_8bit
 #(parameter WIDTH = 8)
 (
-	input		clk,
-				clr,		// enable high
-				wr_en,		// enable high
-				rd_en,		// enable high
+	input	clk,
+		clr,				// enable high
+		wr_en,				// enable high
+		rd_en,				// enable high
 
-	inout		[WIDTH - 1:0] bus,	// 8-bit bidirectional bus
+	inout	[WIDTH - 1:0] bus,		// 8-bit bidirectional bus
 
 	output	[WIDTH - 1:0] reg_out  		// 8-bit output to ALU
 );
