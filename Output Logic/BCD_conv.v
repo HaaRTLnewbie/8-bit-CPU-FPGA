@@ -1,5 +1,5 @@
 module bcd_conv									// BCD converter using double dabble algorithm
-#( parameter W = 8)
+#(parameter W = 8)
 (
 	input 	clk,
 		en,
