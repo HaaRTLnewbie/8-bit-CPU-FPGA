@@ -1,16 +1,16 @@
 module RAM_8bit
 #(parameter WIDTH = 8)
 (
-	input		clk,
-			prog_en,				// enable high
-			wr_en,					// enable high
-			rd_en,					// enable high
+	input	clk,
+		prog_en,					// enable high
+		wr_en,						// enable high
+		rd_en,						// enable high
 											
-	input		[WIDTH - 1:0]		sw,		// 8-bit input to store to RAM from switches
+	input	[WIDTH - 1:0] sw,				// 8-bit input to store to RAM from switches
 	
-	input		[(WIDTH / 2) - 1:0]	addr,		// 4-bit address from MAR
+	input	[(WIDTH / 2) - 1:0] addr,			// 4-bit address from MAR
 	
-	inout		[WIDTH - 1:0] 		bus		// 8-bit bidirectional bus
+	inout	[WIDTH - 1:0] bus				// 8-bit bidirectional bus
 );
 
 reg [WIDTH - 1:0] mem_reg [0:15];		     		// Defining 8-bit wide memory with 16 addresses
