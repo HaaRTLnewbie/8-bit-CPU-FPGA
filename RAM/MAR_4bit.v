@@ -1,16 +1,16 @@
 module MAR_4bit
 #(parameter WIDTH = 4)
 (
-	input 		clk,
-			clr,				// enable high
-			prog_en,			// enable high
-			reg_en,				// enable high
+	input	clk,
+		clr,					// enable high
+		prog_en,				// enable high
+		reg_en,					// enable high
 				
-	input		[WIDTH - 1:0] sw,		// 4 input dip switch
+	input	[WIDTH - 1:0] sw,			// 4 input dip switch
 	
-	input		[WIDTH - 1:0] bus,		// 4-bit bus input
+	input	[WIDTH - 1:0] bus,			// 4-bit bus input
 		
-	output		[WIDTH - 1:0] addr		// 4-bit addr output to RAM module
+	output	[WIDTH - 1:0] addr			// 4-bit addr output to RAM module
 );
 
 reg [WIDTH - 1:0] mem_addr;
