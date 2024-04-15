@@ -1,26 +1,26 @@
-module bcd_seg_7															           	// BCD to 7 segment using double dabble algorithm
-#(parameter		W = 8)
+module bcd_seg_7									// BCD to 7 segment using double dabble algorithm
+#(parameter W = 8)
 (
 	input 	clk,
-				  en,																              // enable high
+		en,									// enable high
 									
-	input		[W - 1:0] 	bus,
+	input	[W - 1:0] 	bus,
 	
-	output 	reg [6:0] 	d0,												          // Output registers to drive 3, 7-seg displays
-								      d1,
-								      d2
+	output 	reg [6:0] 	d0,							// Output registers to drive 3, 7-seg displays
+				d1,
+				d2
 );
 
 localparam	ZERO	= 7'b1111110,
-				ONE	= 7'b0110000,
-				TWO	= 7'b1101101,
-				THREE	= 7'b1111001,
-				FOUR	= 7'b0110011,
-				FIVE	= 7'b1011011,
-				SIX	= 7'b1011111,
-				SEVEN	= 7'b1110000,
-				EIGHT	= 7'b1111111,
-				NINE	= 7'b1111011;
+		ONE	= 7'b0110000,
+		TWO	= 7'b1101101,
+		THREE	= 7'b1111001,
+		FOUR	= 7'b0110011,
+		FIVE	= 7'b1011011,
+		SIX	= 7'b1011111,
+		SEVEN	= 7'b1110000,
+		EIGHT	= 7'b1111111,
+		NINE	= 7'b1111011;
 
 integer i;
 
@@ -30,8 +30,8 @@ always @ (posedge clk)
 if (en)
 	begin
 		bcd[W-1:0] <= bus;		 	
-		for (i=0; i<W; i=i+1)												          // Iterate through each input bit
-		begin																		              // If any BCD digit is >= 5, add three
+		for (i=0; i<W; i=i+1)							// Iterate through each input bit
+		begin									// If any BCD digit is >= 5, add three
 			if (bcd[3:0] >= 5)	bcd[3:0]  <= bcd[3:0]  + 4'd3;	
 			if (bcd[7:4] >= 5)	bcd[7:4]  <= bcd[7:4]  + 4'd3;
 			if (bcd[11:8] >= 5)	bcd[11:8] <= bcd[11:8] + 4'd3;
