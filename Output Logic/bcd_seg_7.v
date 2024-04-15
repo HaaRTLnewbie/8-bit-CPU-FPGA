@@ -1,4 +1,5 @@
-module bcd_seg_7									// BCD to 7 segment using double dabble algorithm
+// Combined BCD and 7 segment RTL to one module //
+module bcd_seg_7
 #(parameter W = 8)
 (
 	input 	clk,
