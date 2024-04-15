@@ -1,16 +1,16 @@
 module ALU
 #(parameter WIDTH = 8)
 (
-	input		clk,
-			clr,							// enable high
-			en,							// enable high
+	input	clk,
+		clr,								// enable high
+		en,								// enable high
 
-	input		[1:0]	sel,						// Select signal to choose operation to execute
+	input	[1:0] sel,							// Select signal to choose operation to execute
 	
-	input		[WIDTH - 1:0] 	reg_A,					// 8-bit inputs directly from register A and B
-					reg_B,
+	input	[WIDTH - 1:0]	reg_A,						// 8-bit inputs directly from register A and B
+				reg_B,
 
-	inout		[WIDTH - 1:0]	bus
+	inout	[WIDTH - 1:0]	bus
 );
 
 localparam	ADD	=	2'b00,						// Parameterising names for the opcodes
