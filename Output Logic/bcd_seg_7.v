@@ -4,11 +4,11 @@ module bcd_seg_7									// BCD to 7 segment using double dabble algorithm
 	input 	clk,
 		en,									// enable high
 									
-	input	[W - 1:0] 	bus,
+	input	[W - 1:0] bus,
 	
-	output 	reg [6:0] 	d0,							// Output registers to drive 3, 7-seg displays
-				d1,
-				d2
+	output 	reg [6:0] d0,								// Output registers to drive 3, 7-seg displays
+			  d1,
+			  d2
 );
 
 localparam	ZERO	= 7'b1111110,
