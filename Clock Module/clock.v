@@ -1,7 +1,7 @@
 module clock
 (
-	input		clk_in,
-				  hlt,
+	input	clk_in,
+		hlt,
   
 	output	clk_out
 );
