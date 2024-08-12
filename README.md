@@ -1,4 +1,4 @@
-This is a personal project where I design an 8-bit CPU with an ALU capable of performing basic mathematical operations, essentially making it a calculator.
+This is a personal project where I design an 8-bit CPU that functions as a calculator with 4 operations.
 
 I am designing each module separately and they will be uploaded as I make progress on them. This includes Verilog design and testbench code files.
 
